@@ -2,10 +2,13 @@
 #include <process.h>
 int main()
 {
-	int num, parity;
-	scanf("%d",num);
-	int i=0,j=0;
-	parity = num%2 ? 1, 0; // if num is odd, move to 3rd rod first, if not to 2nd first;
+	int num=0, parity, i=0, j=0;
+	scanf("%d", &num);
+	if( num==1 ){
+		printf("%d %d\n", 0, 2);
+		return 0;
+	}
+	parity = num%2 ? 1: 0; // if num is odd, move to 3rd rod first, if not to 2nd first;
 	printf("%d %d\n", 0, 1+parity);
 	parity = (parity+1)%2;// odd even transfer
 	for( i=2; i<=num-1; i++ )
